@@ -1,0 +1,12 @@
+<div>
+<form [formGroup]="form" (ngSubmit)="onSubmit()"> 
+    <div *ngFor="let field of formData" >  
+ 
+    <label [for]="field.name">{{ field.label }}</label> 
+  
+    <div>
+        <input [id]="field.name" [type]="field.type" [formControlName]="field.name" />
+    </div>
+  </div>
+     <button type="submit" [disabled]="isAnyFieldEmpty()" [ngClass]="{'blur': isAnyFieldEmpty()}">Submit</button></form>
+</div>
